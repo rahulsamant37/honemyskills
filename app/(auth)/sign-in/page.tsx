@@ -31,7 +31,7 @@ function SignIn() {
       });
       console.log("--", result);
       setUser(result);
-      router.replace('/ai-assistant')
+      router.replace('/ai-assistants')
     },
     onError: errorResponse => console.log(errorResponse),
   });
@@ -44,7 +44,7 @@ function SignIn() {
                   height={100}
               />
               <h2 className='text-2xl'>Sign In To honemyskills Website</h2>
-              <Button onClick={()=>googleLogin()}>Sign In With Gmail</Button>
+              <Button className='cursor-pointer' onClick={()=>googleLogin()}>Sign In With Gmail</Button>
           </div>
       </div>
     )
