@@ -12,6 +12,7 @@ export const InsertSelectedAssistants=mutation({
             args.records.map(async(record:any)=>
             await ctx.db.insert('userAiAssistants',{
                 ...record,
+                aiModelId:'Google: Gemini 2.0 Flash',
                 uid:args.uid
             })
             )
@@ -30,5 +31,31 @@ export const GetAllUseAssistants=query({
             .collect();
 
         return result;
+    }
+})
+
+export const UpdateUserAiAssistant=mutation({
+    args:{
+        id:v.id('userAiAssistants'),
+        userInstruction:v.string(),
+        aiModelId:v.string()
+    },
+    handler:async(ctx,args)=>{
+
+        const result=await ctx.db.patch(args.id,{
+            aiModelId:args.aiModelId,
+            userInstruction:args.userInstruction
+        });
+
+        return result;
+    }
+})
+
+export const DeleteAssistant=mutation({
+    args:{
+        id:v.id('userAiAssistants')
+    },
+    handler:async(ctx,args)=>{
+        await ctx.db.delete(args.id);
     }
 })

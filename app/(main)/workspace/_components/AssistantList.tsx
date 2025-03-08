@@ -9,6 +9,7 @@ import { ASSISTANT } from '../../ai-assistants/page';
 import AiAssistantsList from '@/services/AiAssistantsList';
 import Image from 'next/image';
 import { AssistantContext } from '@/context/AssistantContext';
+import { BlurFade } from '@/components/magicui/blur-fade';
 
 function AssistantList() {
     const {user} = useContext(AuthContext);
@@ -18,7 +19,7 @@ function AssistantList() {
 
     useEffect(()=>{
             user&&GetUserAssistants();
-    },[user])
+    },[user&&assistant==null])
 
     const GetUserAssistants = async() => {
         const result = await convex.query(api.userAiAssistants.GetAllUseAssistants,{
@@ -37,23 +38,25 @@ function AssistantList() {
 
                 <div className='mt-5'>
                     {assistantList.map((assistant_,index)=>(
-                        <div className={`p-2 flex gap-3 items-center
-                        hover:bg-gray-200 hover:dark:bg-slate-700  
-                        rounded-xl cursor-pointer mt-2
-                        ${assistant_.id==assistant?.id&&'bg-gray-200 dark:bg-gray-700'}
-                        `} 
-                        key={index} onClick={()=>setAssistant(assistant_)}>
-                            <Image src={assistant_.image} alt={assistant_.name} 
-                            width={60}
-                            height={60}
-                            className='rounded-xl w-[60px] h-[60px]
-                            object-cover'
-                            />
-                            <div>
-                                <h2 className='font-bold'>{assistant_.name}</h2>
-                                <h2 className='text-gray-600 text-sm dark:text-gray-300'>{assistant_.title}</h2>
+                        <BlurFade key={assistant_.image} delay={0.25 + index * 0.05} inView>
+                            <div className={`p-2 flex gap-3 items-center
+                            hover:bg-gray-200 hover:dark:bg-slate-700  
+                            rounded-xl cursor-pointer mt-2
+                            ${assistant_.id==assistant?.id&&'bg-gray-200 dark:bg-gray-700'}
+                            `} 
+                            key={index} onClick={()=>setAssistant(assistant_)}>
+                                <Image src={assistant_.image} alt={assistant_.name} 
+                                width={60}
+                                height={60}
+                                className='rounded-xl w-[60px] h-[60px]
+                                object-cover'
+                                />
+                                <div>
+                                    <h2 className='font-bold'>{assistant_.name}</h2>
+                                    <h2 className='text-gray-600 text-sm dark:text-gray-300'>{assistant_.title}</h2>
+                                </div>
                             </div>
-                        </div>
+                        </BlurFade>
                     ))}
                 </div> 
                 <div className='absolute bottom-10 flex gap-3 items-center 

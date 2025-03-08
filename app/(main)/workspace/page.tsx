@@ -1,5 +1,6 @@
 import React from 'react'
 import AssistantList from './_components/AssistantList'
+import AssistantSettings from './_components/AssistantSettings'
 
 function Workspace() {
   return (
@@ -15,7 +16,7 @@ function Workspace() {
             </div>
             <div className='hidden lg:block'>
                 {/*Settings */}
-                SETTING
+                <AssistantSettings />
             </div>
         </div>
     </div>
