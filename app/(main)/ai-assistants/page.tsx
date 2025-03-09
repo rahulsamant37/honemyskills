@@ -18,7 +18,8 @@ export type ASSISTANT = {
     image: string,
     instruction: string,
     userInstruction: string,
-    sampleQuestions: string[]
+    sampleQuestions: string[],
+    aiModelId?: string
 }
 
 function AIAssistants() {
