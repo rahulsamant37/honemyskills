@@ -49,7 +49,8 @@ function ChatUi() {
         const AIModel=AiModelOptions.find(item=>item.name==assistant.aiModelId);
         const result=await axios.post('/api/eden-ai-model',{
             provider:AIModel?.edenAi,
-            userInput:input
+            userInput:userInput + ":" + assistant?.instruction + ":" + assistant?.userInstruction,
+            aiResp:messages[messages?.length-1]?.content
         });
         setLoading(false);
         setMessages(prev=>prev.slice(0,-1));

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req:NextRequest) {
-    const {provider,userInput} = await req.json()
+    const {provider,userInput,aiResp} = await req.json()
     const headers = {
         Authorization: "Bearer "+process.env.EDEN_AI_API_KEY,
         'Content-Type':'application/json'
@@ -20,7 +20,18 @@ export async function POST(req:NextRequest) {
                     }
                 }
             ]
-        }
+        },
+        ...(aiResp ? [{
+            "role":"assistant",
+            "content": [
+                {
+                    "type": "text",
+                    "content": {
+                        "text": aiResp
+                    }
+                }
+            ]
+        }] : [])
       ]
     });  
     const response = await fetch(url, {
@@ -32,7 +43,7 @@ export async function POST(req:NextRequest) {
     console.log(result)
     const resp={
         role:'assistant',
-        content:result[provider].generated_text
+        content:result[provider]?.generated_text
     }
 
     return NextResponse.json(resp);
