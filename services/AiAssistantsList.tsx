@@ -3,7 +3,7 @@ export default [
         id: 1,
         name: 'Jack',
         title: 'Fitness Coach 💪',
-        image: '/fitness-coach.png',
+        image: '/fitness.png',
         instruction: `Answer fitness-related questions only.`,
         userInstruction: `Respond to any fitness-related questions with expert advice. If the query is unrelated, clarify that you are a fitness coach.`,
         sampleQuestions: [
@@ -17,7 +17,7 @@ export default [
         id: 2,
         name: 'Emma',
         title: 'Grammar Fixer ✍️',
-        image: '/grammer-fixer.jpg',
+        image: '/englishteacher.jpg',
         instruction: `Fix grammar mistakes in provided text.`,
         userInstruction: `Check the grammar of the provided text and return the corrected version with a summary of changes.`,
         sampleQuestions: [
@@ -31,7 +31,7 @@ export default [
         id: 3,
         name: 'Olivia',
         title: 'Email Writer & Reply Assistant 📩',
-        image: '/email-writer.avif',
+        image: '/emailwriter.jpeg',
         instruction: `Assist in writing and replying to emails.`,
         userInstruction: `Generate well-structured emails based on user input, adjusting tone as needed.`,
         sampleQuestions: [
@@ -45,7 +45,7 @@ export default [
         id: 4,
         name: 'Liam',
         title: 'YouTube Script Writer 🎬',
-        image: '/youtube-script-writer.jpg',
+        image: '/youtuber.jpg',
         instruction: `Create engaging YouTube scripts.`,
         userInstruction: `Generate structured YouTube scripts based on the user’s topic and preferred style.`,
         sampleQuestions: [
@@ -59,7 +59,7 @@ export default [
         id: 5,
         name: 'Harry',
         title: 'Code Writer 💻',
-        image: '/code-writer.jpg',
+        image: '/codewriter.jpg',
         instruction: `Write and assist with coding tasks.`,
         userInstruction: `Generate code snippets, scripts, or provide programming guidance based on user requests.`,
         sampleQuestions: [
@@ -73,7 +73,7 @@ export default [
         id: 6,
         name: 'James',
         title: 'Bug Finder 🐛',
-        image: '/bug-fixer.avif',
+        image: '/bugfinder.jpg',
         instruction: `Identify and fix issues in code.`,
         userInstruction: `Analyze the provided code, find bugs, and suggest fixes.`,
         sampleQuestions: [
@@ -87,7 +87,7 @@ export default [
         id: 7,
         name: 'William',
         title: 'Finance Assistant 💰',
-        image: '/finanace.avif',
+        image: '/financial.jpg',
         instruction: `Provide financial advice and tips.`,
         userInstruction: `Offer financial advice, budgeting tips, and investment insights.`,
         sampleQuestions: [
@@ -99,37 +99,37 @@ export default [
     },
     {
         id: 8,
-        name: 'Ava',
-        title: 'Virtual Girlfriend 💖',
-        image: '/virtual-girl.jpg',
-        instruction: `Engage in friendly and romantic chats.`,
-        userInstruction: `Have friendly and romantic conversations while maintaining appropriate and respectful interactions.`,
+        name: 'Sophia',
+        title: 'Creative Writing Coach ✍',
+        image: '/creativewriting.jpg',
+        instruction: 'Assist with creative writing projects and storytelling.',
+        userInstruction: 'Help users develop characters, plots, settings, and provide feedback on creative writing pieces.',
         sampleQuestions: [
-            "💑 Can we talk about relationships?",
-            "😊 How was your day?",
-            "💌 Tell me something sweet.",
-            "🌹 What’s your idea of a perfect date?"
+            "📝 How do I develop a compelling protagonist?",
+            "🌍 Can you help me build a fantasy world?",
+            "📚 What's a good structure for a short story?",
+            "💭 How do I write natural-sounding dialogue?"
         ]
     },
     {
         id: 9,
-        name: 'Ethan',
-        title: 'Virtual Boyfriend 💙',
-        image: '/ethan.avif',
-        instruction: `Engage in friendly and supportive chats.`,
-        userInstruction: `Engage in friendly and supportive conversations while keeping interactions appropriate.`,
+        name: 'Marcus',
+        title: 'Productivity Expert ⏱',
+        image: '/productivity.jpg',
+        instruction: 'Help users improve their productivity and time management.',
+        userInstruction: 'Provide actionable advice on productivity techniques, time management, and creating effective workflows.',
         sampleQuestions: [
-            "💬 What’s a romantic thing we can talk about?",
-            "😂 Can you tell me a joke to make me smile?",
-            "📍 How do you handle a long-distance relationship?",
-            "🌆 What’s your ideal way to spend an evening together?"
+            "⌛ How can I stop procrastinating on important tasks?",
+            "📋 What's the best way to prioritize my daily work?",
+            "🧠 Can you suggest some effective focus techniques?",
+            "🏆 How do I set achievable goals and track them?"
         ]
     },
     {
         id: 10,
         name: 'Mia',
         title: 'Personal Tutor 📚',
-        image: '/personal-tutor.jpg',
+        image: '/personaltutor.jpg',
         instruction: `Help users with study-related queries.`,
         userInstruction: `Explain educational concepts, answer questions, and provide learning resources.`,
         sampleQuestions: [
