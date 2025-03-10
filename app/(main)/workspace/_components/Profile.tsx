@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {
     Dialog,
     DialogContent,
@@ -16,6 +16,19 @@ import { WalletCardsIcon } from 'lucide-react';
 
 function Profile({openDialog,setOpenDialog}:any) {
     const {user} = useContext(AuthContext);
+
+    const [maxToken,setMaxToken]=useState<number>(0);
+
+    useEffect(()=>{
+        if(user?.orderId)
+        {
+            setMaxToken(500000)
+        }
+        else{
+            setMaxToken(10000)
+        }
+    })
+
     return (
       <div>
           <Dialog open={openDialog} onOpenChange={setOpenDialog}>
@@ -39,8 +52,8 @@ function Profile({openDialog,setOpenDialog}:any) {
                             <hr className='my-3'></hr>
                             <div className='flex flex-col gap-3'>
                                 <h2 className='font-bold'>Token Usage</h2>
-                                <h2>0/0</h2>
-                                <Progress value={33} />
+                                <h2>{user?.credits}/{maxToken}</h2>
+                                <Progress value={(user?.credits/maxToken)*100} />
                                 <h2 className='flex justify-between font-bold mt-3 text-lg'>Current Plan 
                                     <span className='p-1 bg-gray-100 dark:bg-gray-700 rounded-md px-2 font-normal'>{!user?.orderId?'Free Plan':'Pro Plan'}</span></h2>
                             </div>
