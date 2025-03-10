@@ -1,11 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import LandingPage from "./landing-page";
 
 export default function Home() {
   return (
-    <div>
-      <h2>Hello Welcome to My World!</h2>
-      <Button>Don't Click</Button>
-    </div>
+    <LandingPage />
   );
 }

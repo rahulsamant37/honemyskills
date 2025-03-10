@@ -43,7 +43,7 @@ function SignIn() {
                   width={100}
                   height={100}
               />
-              <h2 className='text-2xl'>Sign In To honemyskills Website</h2>
+              <h2 className='text-2xl'>Sign In To honeyourskills Website</h2>
               <Button className='cursor-pointer' onClick={()=>googleLogin()}>Sign In With Gmail</Button>
           </div>
       </div>

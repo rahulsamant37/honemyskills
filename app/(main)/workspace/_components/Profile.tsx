@@ -66,7 +66,7 @@ function Profile({openDialog,setOpenDialog}:any) {
                                     <h2 className='font-bold text-lg'>$10/month</h2>
                                 </div>
                                 <hr className='my-3' />
-                                <Button className='w-full'> <WalletCardsIcon /> Upgrade (10$)</Button>
+                                <Button className='w-full cursor-pointer'> <WalletCardsIcon /> Upgrade (10$)</Button>
                             </div>
                         </div>
                     </DialogDescription>
