@@ -112,11 +112,11 @@ function ChatUi() {
             absolute bottom-5 w-[96%]'>
                 <Input placeholder='Start Typing here...' 
                     value={input}
-                    disabled={loading}
+                    disabled={loading||user?.credits<=0}
                     onChange={(event)=>setInput(event.target.value)}
                     onKeyPress={(e)=>e.key=='Enter'&&onSendMessage()}
                 />
-                <Button disabled={loading}> 
+                <Button disabled={loading||user?.credits<=0}> 
                     <Send />
                 </Button>
             </div>
