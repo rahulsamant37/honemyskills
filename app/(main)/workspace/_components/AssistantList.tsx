@@ -45,7 +45,7 @@ function AssistantList() {
         setAssistantList(result);
     }
     return (
-        <div className='p-5 bg-secondary border-r-[1px] h-screen relative'>
+        <div className='p-5 dark:bg-gray-800 border-r-[1px] h-screen relative'>
                 <h2 className='font-bold text-lg'>Your Personal AI Assistants</h2>
 
                 <AddNewAssistant>
