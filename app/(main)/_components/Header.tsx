@@ -6,7 +6,7 @@ import React, { useContext } from 'react'
 function Header() {
     const {user} = useContext(AuthContext);
     return (
-      <div className='p-2 fixed shadow-sm flex justify-between items-center px-7'>
+      <div className='p-2 shadow-sm flex justify-between items-center px-7'>
           <Image src={'/logo.svg'} alt='logo'
             width={30}
             height={30}

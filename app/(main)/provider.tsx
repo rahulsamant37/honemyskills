@@ -45,7 +45,7 @@ function Provider({
     return (
         <div>
             <AssistantContext.Provider value={{assistant,setAssistant}}>
-                <Header/>
+                <Header />
                 {children}
             </AssistantContext.Provider>
         </div>
