@@ -51,7 +51,7 @@ function AssistantSettings(){
     setLoading(false);
   }
   return assistant && (
-    <div className='p-5 bg-secondary border-l-[1px] h-screen'>
+    <div className='p-5 bg-gray-800 border-l-[1px] h-screen'>
         <h2 className='font-bold text-xl'>Settings</h2>
         <BlurFade delay={0.25}>
           <div className='mt-4 flex gap-3'>
